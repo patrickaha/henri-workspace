@@ -1,0 +1,13 @@
+{
+  "name": "clawdhub-scan-daily",
+  "schedule": "0 9 * * *",
+  "description": "Daily skill intelligence scan from clawdhub.com",
+  "command": "/Users/arthelper/.clawdbot/skills/clawdhub-scan/skill.sh scan --min-score 75",
+  "output": {
+    "destination": "slack",
+    "channel": "#new_skills"
+  },
+  "enabled": true,
+  "category": "automation",
+  "created": "2026-01-17"
+}

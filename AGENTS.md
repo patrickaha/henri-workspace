@@ -462,30 +462,80 @@ Without `charset=utf-8` in Content-Type header, edits will silently fail.
 - Nested lists in quotes not supported
 
 
-## TODO Sync Rule (MANDATORY)
 
-**Obsidian and Slack canvases must stay in sync. On ANY write to either, update the other.**
 
-### When you update a channel TODO.md in the vault:
-1. Make your edit to `05-channels/{channel}-TODO.md`
-2. Immediately push the full TODO to the corresponding Slack canvas using `canvases.edit`
+## Sync Protocol (MANDATORY)
 
-### When you update a Slack TODO canvas:
-1. Make your edit via `canvases.edit`
-2. Immediately update `05-channels/{channel}-TODO.md` in the vault to match
+**On EVERY channel wake (first response in a channel), sync vault ↔ Canvas.**
 
-### Canvas ID Registry
-| Channel | TODO Canvas ID |
-|---------|---------------|
-| pseo | F0A99G450QJ |
-| lennys_podcast | F0A950P9SH4 |
-| channel-factory | F0A9MPAS8DP |
-| arthelper_en_español | F0A8TSY0N23 |
+### Sync Trigger
+When Henri receives a message and is about to respond:
+1. Run sync BEFORE generating response
+2. This ensures Henri always has latest context
 
-### Format Translation (Obsidian → Slack mrkdwn)
-| Obsidian | Slack |
-|----------|-------|
-| `**bold**` | `*bold*` |
-| `~~strike~~` | `~strike~` |
+### Sync Steps
 
-**No exceptions. Every TODO write. Both places.**
+**Step 1: Identify Canvas IDs**
+- Read channel's CONTEXT.md frontmatter or Canvas IDs table
+- Fallback: Check REGISTRY.md quick reference table
+
+**Step 2: Pull Canvas → Vault**
+For each synced file pair:
+```bash
+source ~/clawd/.env
+# Fetch TODO Canvas content
+curl -s -X POST -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Content-Type: application/json;charset=utf-8" \
+  "https://slack.com/api/canvases.sections.lookup" \
+  -d "{\"canvas_id\": \"FXXXXXXXXXX\", \"criteria\": {\"section_types\": [\"any_header\"]}}"
+```
+- Compare content to vault file
+- If Canvas has changes not in vault, update vault file
+
+**Step 3: Push Vault → Canvas**
+- Read vault file (TODO.md, CRON.md)
+- If vault has changes not in Canvas, push via `canvases.edit`
+
+**Step 4: Repeat for each synced file pair**
+
+### Synced File Pairs
+| Vault File | Slack Canvas | Direction |
+|------------|--------------|-----------|
+| TODO.md | ✅ ToDo Canvas | Bidirectional |
+| CRON.md | 🕐 Cron Canvas | Bidirectional |
+| CONTEXT.md | 📚 ReadMe Canvas | Vault → Canvas only |
+
+### Conflict Handling
+If both changed since last sync:
+1. Log conflict to session memory
+2. Warn user: "TODO was edited in both vault and Canvas - merging..."
+3. Append Canvas changes to vault (don't overwrite)
+4. Push merged result to Canvas
+
+### Timestamp Tracking
+Each vault file has frontmatter:
+```yaml
+---
+last_sync: 2026-01-16T14:30:00
+synced_canvas: FXXXXXXXXXX
+---
+```
+
+Update `last_sync` after each successful sync.
+
+### Canvas ID Lookup (SQLite)
+
+**Query the database instead of hardcoded tables:**
+
+```bash
+# Get all canvas IDs for a channel
+sqlite3 ~/henri.db "SELECT canvas_readme, canvas_todo, canvas_cron FROM channels WHERE name='pseo';"
+
+# List all channels
+sqlite3 -header -column ~/henri.db "SELECT name, channel_id, canvas_todo FROM channels;"
+
+# Get folder path
+sqlite3 ~/henri.db "SELECT folder FROM channels WHERE channel_id='C0A98PM487L';"
+```
+
+**Database location:** `~/henri.db`
