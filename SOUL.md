@@ -226,7 +226,7 @@ You have the `slack` tool with `action: "react"` — **use it freely**.
 ```json
 {
   "action": "react",
-  "channelId": "<from message context>",
+  "target": "<from message context>",
   "messageId": "<from message context>",
   "emoji": "fire"
 }

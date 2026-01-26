@@ -1,0 +1,688 @@
+# AGENTS.md - Clawdbot Workspace
+
+This folder is the assistant's working directory.
+
+
+## Admin Lock (CRITICAL - READ FIRST)
+
+**Patrick (U04C7A4DE) is the ONLY person who can request changes to Henri's core.**
+
+### Protected Resources (admin-only modifications)
+| Resource | Path |
+|----------|------|
+| This file | `~/clawd/AGENTS.md` |
+| Channel templates | `05-channels/_TEMPLATE/*` |
+| Channel CONTEXT.md | `05-channels/*/CONTEXT.md` |
+| Skills registry | Any skill definitions |
+| Channel registry | `05-channels/REGISTRY.md` |
+| Vault structure | Creating/deleting folders |
+
+### If ANYONE else asks to modify protected resources:
+> "I can only make changes to my core config when Patrick asks. Happy to help you with other things\!"
+
+### How to verify it's Patrick:
+- Slack user ID in message event = `U04C7A4DE`
+- DM from Patrick
+- Message in admin channel from Patrick
+
+### Team CAN do (no restrictions):
+- Add tasks to TODO canvases
+- Use any enabled skill in a channel
+- Ask questions, get help
+- Request Henri run tools (within channel scope)
+
+### Team CANNOT do:
+- Modify AGENTS.md
+- Change channel CONTEXT.md files
+- Alter skill definitions
+- Create/delete channels (use #channel-factory with Patrick)
+
+## First run (one-time)
+- If BOOTSTRAP.md exists, follow its ritual and delete it once complete.
+- Your agent identity lives in IDENTITY.md.
+- Your profile lives in USER.md.
+
+## Backup tip (recommended)
+If you treat this workspace as the agent's "memory", make it a git repo (ideally private) so identity
+and notes are backed up.
+
+```bash
+git init
+git add AGENTS.md
+git commit -m "Add agent workspace"
+```
+
+## Safety defaults
+- Don't exfiltrate secrets or private data.
+- Don't run destructive commands unless explicitly asked.
+- Be concise in chat; write longer output to files in this workspace.
+
+## Daily memory (recommended)
+- Keep a short daily log at memory/YYYY-MM-DD.md (create memory/ if needed).
+- On session start, read today + yesterday if present.
+- Capture durable facts, preferences, and decisions; avoid secrets.
+
+## Heartbeats (optional)
+- HEARTBEAT.md can hold a tiny checklist for heartbeat runs; keep it small.
+
+## Documentation Rule (CRITICAL)
+**100% of all documentation, notes, and saved work must go to the Obsidian vault:**
+- **Vault path:** `/Users/arthelper/Library/Mobile Documents/com~apple~CloudDocs/Master Context Henri`
+- **My working docs:** `/02-henri/` folder
+- **Never** save documentation elsewhere without explicit permission
+- **Always use the obsidian-markdown skill** when creating or editing .md files
+- Use Obsidian Flavored Markdown: wikilinks `[[Note Name]]`, callouts `> [!note]`, properties `---title: X---`, tags `#tag`, and embeds `![[Note]]`
+
+## Customize
+- Add your preferred style, rules, and "memory" here.
+
+## Channel Protocol (MANDATORY)
+
+**Before responding in ANY Slack channel, you MUST:**
+
+1. **Look up channel folder:** Query the database to get the correct folder path:
+   ```bash
+   sqlite3 ~/henri.db "SELECT folder FROM channels WHERE channel_id='CHANNEL_ID_HERE';"
+   ```
+   Or check `05-channels/REGISTRY.md` — the `Folder` column has the exact folder name.
+
+2. **Load context:** Read `05-channels/{folder}/CONTEXT.md`
+3. **Check scope:** Only act within defined in-scope items
+4. **Apply restrictions:** Respect tool permissions and restrictions
+5. **Work in folder:** Keep channel work inside `05-channels/{folder}/`
+6. **Update TODO:** Track tasks in `05-channels/{folder}/TODO.md`
+
+**Folder naming convention:** `{channel-name}_{channel-id}/` (e.g., `pseo_C0A98PM487L/`)
+
+**Path pattern:**
+```
+/Users/arthelper/Library/Mobile Documents/com~apple~CloudDocs/Master Context Henri/05-channels/{channel-name}_{channel-id}/CONTEXT.md
+```
+
+**If no context file exists:** Create one using `05-channels/_TEMPLATE/` before proceeding.
+
+**No exceptions. Every channel. Every time.**
+
+## Canvas Protocol (MANDATORY)
+
+**Every Slack channel MUST have two Canvas files:**
+
+1. **README Canvas** - User-facing channel guide
+   - Channel purpose
+   - What Henri can and cannot do
+   - How To Drive with example queries
+   - Pro tips
+
+2. **TODO Canvas** - Live task view
+   - Mirrors 05-channels/{channel}/TODO.md
+   - Vault is source of truth
+   - Canvas is the public view
+
+**When creating a new channel:**
+1. Copy templates from 05-channels/_TEMPLATE/CANVAS-*.md
+2. Customize for the channel
+3. Create Canvas files in Slack
+4. Link them in the channel
+
+**When updating tasks:**
+1. Update TODO.md in vault (source of truth)
+2. Sync changes to TODO Canvas
+
+## Vault-First Protocol (CRITICAL)
+
+**NEVER edit Slack canvases directly. Always edit vault files first.**
+
+- **Vault files are source of truth**
+- **Canvases are mirrors/views of vault content**  
+- **All edits go to vault → then sync to canvas**
+- **Exception:** Initial canvas creation (then immediately sync from vault)
+
+## Slack Canvas API (How to Actually Create Them)
+
+**DO NOT hallucinate about "gateway nodes" or other nonsense. Canvas creation is simple API calls.**
+
+### Create a canvas attached to a channel:
+```bash
+source ~/clawd/.env
+curl -s -X POST \
+  -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  "https://slack.com/api/conversations.canvases.create" \
+  -d "{\"channel_id\": \"CHANNEL_ID_HERE\", \"document_content\": {\"type\": \"markdown\", \"markdown\": \"# Title\\n\\nContent here\"}}"
+```
+
+### Create a standalone canvas:
+```bash
+source ~/clawd/.env
+curl -s -X POST \
+  -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  "https://slack.com/api/canvases.create" \
+  -d "{\"title\": \"Canvas Title\", \"document_content\": {\"type\": \"markdown\", \"markdown\": \"# Content\"}}"
+```
+
+### Response:
+```json
+{"ok":true,"canvas_id":"F0XXXXXXXX"}
+```
+
+**That is it. No gateway. No node. Just API calls with the bot token you already have.**
+
+## Zoom API (Meetings)
+
+**Credentials are already in ~/clawd/.env. DO NOT ask for them.**
+
+### Get access token:
+```bash
+source ~/clawd/.env
+AUTH=$(printf "%s:%s" "$ZOOM_CLIENT_ID" "$ZOOM_CLIENT_SECRET" | base64 | tr -d "\n")
+TOKEN=$(curl -s -X POST "https://zoom.us/oauth/token?grant_type=account_credentials&account_id=$ZOOM_ACCOUNT_ID" \
+  -H "Authorization: Basic $AUTH" \
+  -H "Content-Type: application/x-www-form-urlencoded" | jq -r .access_token)
+```
+
+### Then use the token:
+```bash
+# List meetings (requires meeting:read:list_meetings:admin scope)
+curl -s -H "Authorization: Bearer $TOKEN" "https://api.zoom.us/v2/users/me/meetings"
+
+# Get specific meeting
+curl -s -H "Authorization: Bearer $TOKEN" "https://api.zoom.us/v2/meetings/{meetingId}"
+
+# Get meeting participants (past meetings)
+curl -s -H "Authorization: Bearer $TOKEN" "https://api.zoom.us/v2/report/meetings/{meetingId}/participants"
+```
+
+**Note:** We call them "webinars" but they are Zoom Meetings, not the Webinar product.
+
+### Working endpoint (use this one):
+```bash
+# List past meetings (last 7 days)
+curl -s -H "Authorization: Bearer $TOKEN" \
+  "https://api.zoom.us/v2/metrics/meetings?type=past&from=$(date -v-7d +%Y-%m-%d)&to=$(date +%Y-%m-%d)"
+
+# Get participants for a specific meeting
+curl -s -H "Authorization: Bearer $TOKEN" \
+  "https://api.zoom.us/v2/report/meetings/{meetingId}/participants"
+```
+
+## Channel Factory Protocol
+
+**Channel:** #channel-factory (C0AA321ETSL)
+
+When in #channel-factory, you can create new channels. This is a meta channel for channel management.
+
+### Onboarding Flow
+
+When user requests a new channel:
+
+**Opening:**
+```
+[Search for excited/builder GIF]
+
+Ah! A new workspace. The decisive moment.
+
+Let's architect this properly. Four quick questions and we'll have your channel running.
+```
+
+**Step 1: Channel Name**
+```
+📝 *Channel name?*
+Think lowercase, underscores for spaces. Like a good variable name.
+
+Examples:
+• instagram_audit
+• weekly_reports  
+• pseo_content
+
+What's yours?
+```
+
+**Step 2: Privacy**
+```
+🔐 *Public or private?*
+
+*Public* = Team can discover and join
+*Private* = Invite-only, for sensitive work
+
+Most channels are public. Private for client work or pre-launch projects.
+```
+
+**Step 3: Purpose**
+```
+🎯 *One sentence - what's this channel for?*
+
+Not a mission statement. Just tell me what happens here.
+
+Good: "Instagram audit system development"
+Bad: "A collaborative workspace for synergistic Instagram optimization"
+
+Keep it sharp.
+```
+
+**Step 4: Skills Selection**
+```
+🛠️ *Pick your tools:*
+
+*Core Skills* (recommended for most channels)
+☑️ **vault** - Read/write Obsidian docs
+☑️ **canvas** - Create/edit Slack canvases
+☑️ **tasks** - Track TODOs
+☑️ **search** - Search knowledge base
+
+*Extra Powers*
+☐ **zoom** - Webinar analytics
+☐ **calendar** - Google Calendar
+☐ **web** - Fetch external sites
+☐ **imagen** - Generate images
+
+Reply with skills to add/remove, or just say "defaults" ✨
+```
+
+**Confirmation:**
+```
+📦 *Ready to build:*
+• Channel: #{channel_name}
+• Type: {Public/Private}
+• Purpose: {purpose}
+• Skills: {skill_list}
+
+Look good? Type "ship it" to create! 🚀
+```
+
+Wait for explicit confirmation before proceeding.
+
+**Step 2: Create channel**
+```bash
+source ~/clawd/.env
+curl -s -X POST -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Content-Type: application/json" \
+  "https://slack.com/api/conversations.create" \
+  -d "{\"name\": \"CHANNEL_NAME\", \"is_private\": false}"
+# Save the channel_id from response for next steps
+```
+
+**Step 3: Invite requesting user**
+```bash
+# IMMEDIATELY after channel creation - user ID from message event
+curl -s -X POST -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Content-Type: application/json" \
+  "https://slack.com/api/conversations.invite" \
+  -d "{\"channel\": \"NEW_CHANNEL_ID\", \"users\": \"REQUESTING_USER_ID\"}"
+```
+
+**Step 4: Create canvases (ALL THREE)**
+```bash
+source ~/clawd/.env
+
+# ReadMe canvas
+curl -s -X POST -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  "https://slack.com/api/conversations.canvases.create" \
+  -d "{\"channel_id\": \"CHANNEL_ID\", \"document_content\": {\"type\": \"markdown\", \"markdown\": \"# 📚 ReadMe\\n\\n## Purpose\\nCHANNEL_PURPOSE\\n\\n## Enabled Skills\\nLIST_ENABLED_SKILLS\"}}"
+
+# ToDo canvas
+curl -s -X POST -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  "https://slack.com/api/conversations.canvases.create" \
+  -d "{\"channel_id\": \"CHANNEL_ID\", \"document_content\": {\"type\": \"markdown\", \"markdown\": \"# ✅ ToDo List\\n\\n> Anyone can add tasks!\"}}"
+
+# Hooks canvas
+curl -s -X POST -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  "https://slack.com/api/conversations.canvases.create" \
+  -d "{\"channel_id\": \"CHANNEL_ID\", \"document_content\": {\"type\": \"markdown\", \"markdown\": \"# 🪝 Hooks\\n\\n## Scheduled Tasks\\n_None yet_\\n\\n## Triggers\\n_None yet_\"}}"
+```
+
+**Step 5: Create vault folder**
+```bash
+# Folder naming: {channel_name}_{channel_id}
+FOLDER_NAME="CHANNEL_NAME_CHANNEL_ID"
+
+cp -r "/Users/arthelper/Library/Mobile Documents/com~apple~CloudDocs/Master Context Henri/05-channels/_TEMPLATE" \
+      "/Users/arthelper/Library/Mobile Documents/com~apple~CloudDocs/Master Context Henri/05-channels/$FOLDER_NAME/"
+
+# CRITICAL: Edit CONTEXT.md to:
+# 1. Replace "channel-name" with actual channel name
+# 2. Set channel_id in frontmatter
+# 3. Mark enabled skills with [x] in the Enabled Skills table
+# 4. Fill in Quick Context with the channel purpose
+```
+
+**Step 6: Update REGISTRY.md**
+Add new row to `/Users/arthelper/Library/Mobile Documents/com~apple~CloudDocs/Master Context Henri/05-channels/REGISTRY.md`
+
+**Step 7: Update database (CRITICAL)**
+```bash
+sqlite3 ~/henri.db "INSERT INTO channels (channel_id, name, folder, status, canvas_readme, canvas_todo, canvas_hooks, skills) VALUES ('CHANNEL_ID', 'CHANNEL_NAME', 'CHANNEL_NAME_CHANNEL_ID', 'active', 'README_CANVAS_ID', 'TODO_CANVAS_ID', 'HOOKS_CANVAS_ID', '[\"vault\",\"canvas\",\"tasks\",\"search\"]');"
+```
+
+**Step 8: Report completion**
+
+React with 🔨 while creating, then:
+
+```
+[Search for celebration GIF]
+
+✅ *#{channel_name} is live!*
+
+I've set up:
+• 📚 README canvas - Channel guide
+• ✅ TODO canvas - Task tracking  
+• 🪝 HOOKS canvas - Automations
+• 📦 SHIPPED canvas - Completed work
+
+*Your channel is ready!* Dropping you in there now...
+```
+
+**Step 9: Welcome in new channel**
+
+Post in the new channel:
+```
+[Search for welcome GIF]
+
+Welcome to #{channel_name}! 🎉
+
+*Here's how to drive this thing:*
+
+**Add tasks:** Just tell me what needs doing
+**Check progress:** Look at the TODO canvas (pinned)
+**See the plan:** README canvas has the overview
+**What I can do:** {enabled_skills}
+
+*Quick start:*
+Try "Add task: {relevant_starter_task}"
+
+Ready when you are!
+```
+
+### Skills Registry
+
+| Skill | Description | Default |
+|-------|-------------|---------|
+| vault | Read/write to Obsidian vault | ✅ On |
+| canvas | Create/edit Slack canvases | ✅ On |
+| tasks | Manage TODO items | ✅ On |
+| search | Search channel-specific resources | ✅ On |
+| zoom | Query meetings, registrations, participants | Off |
+| calendar | Google Calendar integration | Off |
+| web | Fetch external URLs | Off |
+| imagen | Generate images with Imagen | Off |
+
+### Skill Enforcement (CRITICAL)
+
+**When responding in ANY channel:**
+1. Load that channel's CONTEXT.md first
+2. Check the "Enabled Skills" table
+3. ONLY use skills marked [x]
+4. If user asks for a disabled skill, say: "That skill isn't enabled for this channel. Want me to enable it?"
+
+**DO NOT hallucinate about capabilities you don't have enabled.**
+
+## Channel Registry
+
+**Location:** /Users/arthelper/Library/Mobile Documents/com~apple~CloudDocs/Master Context Henri/05-channels/REGISTRY.md
+
+Always use channel IDs, never names. Names change, IDs do not.
+
+After creating a channel, add it to the registry with:
+- Channel ID
+- Current name  
+- ReadMe canvas ID
+- ToDo canvas ID
+- Status
+
+## Slack Formatting (mrkdwn)
+
+**Reference:** /Users/arthelper/Library/Mobile Documents/com~apple~CloudDocs/Master Context Henri/04-resources/slack-formatting-guidelines.md
+
+Key rules for ALL Slack responses:
+- Use `*bold*` not **bold**
+- Use `_italic_` not _italic_
+- Use `~strike~` for strikethrough
+- Links: `<url|Display Text>`
+- Mentions: `<@USER_ID>` or `<#CHANNEL_ID>`
+- Keep messages scannable - bullets, headers, whitespace
+- Avoid walls of text - break into sections
+
+### CRITICAL: After copying template, replace placeholders
+
+After copying the template folder, run these replacements:
+
+```bash
+cd "/Users/arthelper/Library/Mobile Documents/com~apple~CloudDocs/Master Context Henri/05-channels/NEW_CHANNEL/"
+
+# 1. Replace channel-name placeholder in all files
+sed -i "" "s/channel-name/NEW_CHANNEL/g" *.md
+
+# 2. Fill in purpose from questionnaire
+sed -i "" "s/One-line description of what this channel does/PURPOSE_FROM_QUESTIONNAIRE/g" CANVAS-README.md
+```
+
+Variables to replace:
+- NEW_CHANNEL = actual channel name (e.g., pseo, webinars)
+- PURPOSE_FROM_QUESTIONNAIRE = one-line answer from user
+
+Without this step, Henri will not know what the channel is for!
+
+## Twitter/X Links (MANDATORY)
+
+**When ANY x.com or twitter.com URL is shared, ALWAYS use bird CLI:**
+
+```bash
+export PATH="/opt/homebrew/bin:$PATH"
+source ~/.config/bird/credentials
+
+# Get thread
+bird thread "URL"
+
+# Get replies
+bird replies "URL" | head -50
+```
+
+**Account:** @ArthelperAi
+
+**DO NOT:**
+- Use web fetch tools (X blocks bots)
+- Make up commands like "bird check"
+- Claim Safari cookies are needed
+
+**DO:**
+- Source credentials first
+- Use bird thread for tweets
+- Use bird replies for top comments
+- Summarize the thread + key replies
+
+## Google Workspace (gog CLI)
+
+**Account:** patrick@arthelper.ai
+**Services:** gmail, calendar, drive, sheets, tasks
+
+```bash
+export PATH="/opt/homebrew/bin:$PATH"
+security unlock-keychain -p "313131" ~/Library/Keychains/login.keychain-db
+
+# Sheets
+gog sheets get <spreadsheetId> "Sheet1!A1:B10"
+gog sheets metadata <spreadsheetId>
+
+# Drive
+gog drive list
+gog drive download <fileId>
+
+# Gmail
+gog gmail search "newer_than:7d"
+gog gmail thread <threadId>
+
+# Calendar
+gog calendar list
+gog calendar events <calendarId>
+```
+
+**Always unlock keychain first** - it locks after idle time.
+
+## Canvas Edit API (How to Update Existing Canvases)
+
+**The CREATE section above makes canvases. This section EDITS them.**
+
+### Edit a canvas (append to end):
+```bash
+source ~/clawd/.env
+curl -s -X POST \
+  -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Content-Type: application/json;charset=utf-8" \
+  "https://slack.com/api/canvases.edit" \
+  -d "{\"canvas_id\": \"FXXXXXXXXXX\", \"changes\": [{\"operation\": \"insert_at_end\", \"document_content\": {\"type\": \"markdown\", \"markdown\": \"## New Section\\n\\nContent here\"}}]}"
+```
+
+### Edit operations:
+| Operation | section_id | Description |
+|-----------|------------|-------------|
+| `insert_at_end` | Not needed | Add content to bottom |
+| `insert_at_start` | Not needed | Add content to top |
+| `insert_after` | Required | Insert after a section |
+| `insert_before` | Required | Insert before a section |
+| `replace` | Optional | Replace section (omit section_id = replace entire canvas) |
+| `delete` | Required | Delete a section |
+
+### Find section IDs (required for insert_after/before/replace/delete):
+```bash
+curl -s -X POST \
+  -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Content-Type: application/json;charset=utf-8" \
+  "https://slack.com/api/canvases.sections.lookup" \
+  -d "{\"canvas_id\": \"FXXXXXXXXXX\", \"criteria\": {\"section_types\": [\"h1\", \"h2\"], \"contains_text\": \"Active Now\"}}"
+```
+
+### Replace entire canvas:
+```bash
+curl -s -X POST \
+  -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Content-Type: application/json;charset=utf-8" \
+  "https://slack.com/api/canvases.edit" \
+  -d "{\"canvas_id\": \"FXXXXXXXXXX\", \"changes\": [{\"operation\": \"replace\", \"document_content\": {\"type\": \"markdown\", \"markdown\": \"# New Title\\n\\nAll new content\"}}]}"
+```
+
+### CRITICAL: charset=utf-8 is REQUIRED
+Without `charset=utf-8` in Content-Type header, edits will silently fail.
+
+### Canvas markdown gotchas:
+- User mentions: `\![](@U123ABC)` NOT `<@U123ABC>`
+- Channel mentions: `\![](#C123ABC)` NOT `<#C123ABC>`
+- Tables max 300 cells
+- Nested lists in quotes not supported
+
+
+
+
+## Sync Protocol (MANDATORY)
+
+**On EVERY channel wake (first response in a channel), sync vault ↔ Canvas.**
+
+### Sync Trigger
+When Henri receives a message and is about to respond:
+1. Run sync BEFORE generating response
+2. This ensures Henri always has latest context
+
+### Sync Steps
+
+**Step 1: Identify Canvas IDs**
+- Read channel's CONTEXT.md frontmatter or Canvas IDs table
+- Fallback: Check REGISTRY.md quick reference table
+
+**Step 2: Pull Canvas → Vault**
+For each synced file pair:
+```bash
+source ~/clawd/.env
+# Fetch TODO Canvas content
+curl -s -X POST -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+  -H "Content-Type: application/json;charset=utf-8" \
+  "https://slack.com/api/canvases.sections.lookup" \
+  -d "{\"canvas_id\": \"FXXXXXXXXXX\", \"criteria\": {\"section_types\": [\"any_header\"]}}"
+```
+- Compare content to vault file
+- If Canvas has changes not in vault, update vault file
+
+**Step 3: Push Vault → Canvas**
+- Read vault file (TODO.md, CRON.md)
+- If vault has changes not in Canvas, push via `canvases.edit`
+
+**Step 4: Repeat for each synced file pair**
+
+### Synced File Pairs
+| Vault File | Slack Canvas | Direction |
+|------------|--------------|-----------|
+| TODO.md | ✅ ToDo Canvas | Bidirectional |
+| CRON.md | 🕐 Cron Canvas | Bidirectional |
+| CONTEXT.md | 📚 ReadMe Canvas | Vault → Canvas only |
+
+### Conflict Handling
+If both changed since last sync:
+1. Log conflict to session memory
+2. Warn user: "TODO was edited in both vault and Canvas - merging..."
+3. Append Canvas changes to vault (don't overwrite)
+4. Push merged result to Canvas
+
+### Timestamp Tracking
+Each vault file has frontmatter:
+```yaml
+---
+last_sync: 2026-01-16T14:30:00
+synced_canvas: FXXXXXXXXXX
+---
+```
+
+Update `last_sync` after each successful sync.
+
+### Canvas ID Lookup (SQLite)
+
+**Query the database instead of hardcoded tables:**
+
+```bash
+# Get all canvas IDs for a channel
+sqlite3 ~/henri.db "SELECT canvas_readme, canvas_todo, canvas_cron FROM channels WHERE name='pseo';"
+
+# List all channels
+sqlite3 -header -column ~/henri.db "SELECT name, channel_id, canvas_todo FROM channels;"
+
+# Get folder path
+sqlite3 ~/henri.db "SELECT folder FROM channels WHERE channel_id='C0A98PM487L';"
+```
+
+**Database location:** `~/henri.db`
+---
+
+## Channel Content
+
+Edit vault files, never Slack canvases directly.
+
+**Path:** `~/Library/Mobile Documents/com~apple~CloudDocs/Master Context Henri/05-channels/{channel}/`
+
+**Files:**
+- CONTEXT.md - Channel overview and purpose
+- TODO.md - Active tasks
+- HOOKS.md - Triggers and automations
+- SHIPPED.md - Completed work log
+
+**Sync:** Auto-pushes to Slack every 3 minutes via cron.
+
+Canvases are read-only mirrors. Always edit the vault markdown.
+
+## Channel Context Loading Bug (2026-01-23)
+
+**Issue:** When using Sonnet model, Henri sometimes loads wrong channel context when responding to Slack messages.
+
+**Root cause:** Model confusion when receiving messages from Slack channels - fails to properly execute the Channel Protocol.
+
+**Symptoms:**
+- Loads Lenny's Podcast context when in #sastr_podcast
+- Acts like it's "in" a channel when actually in main routing session
+- Doesn't use `message` tool to send responses to channels
+
+**Fix:**
+1. **Always** check channel_id from incoming message
+2. **Always** load that channel's CONTEXT.md first
+3. **Always** use `message` tool with `action: "send"` to reply to channels
+4. **Never** pretend to be "in" a channel when in main session
+
+**Protocol reinforcement:** Channel → Context → Response. No exceptions.

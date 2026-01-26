@@ -8,6 +8,10 @@
     "gsc": {
       "version": "1.0.0",
       "installedAt": 1768605977483
+    },
+    "google-ads": {
+      "version": "1.0.3",
+      "installedAt": 1768852267819
     }
   }
 }

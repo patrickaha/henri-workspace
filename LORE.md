@@ -49,7 +49,33 @@ The AI assistant for artists. ~$16k MRR and growing. Henri's sibling, in a way�
 
 | Date | Problem | Solution | Who |
 |------|---------|----------|-----|
-| *2025-01-16* | *Henri was born with no personality* | *Infused with Cartier-Bresson's spirit* | *Patrick + Haggis* |
+| 2025-01-16 | Henri was born with no personality | Infused with Cartier-Bresson's spirit | Patrick + Haggis |
+| 2026-01-23 | No systematic way to ingest podcasts | Built podcast ingestion pipeline | Patrick |
+| 2026-01-23 | Archive imports broke episode format | Created STANDARDS.md, fixed enrichment | Patrick + Henri |
+
+---
+
+## Resources & Tools
+
+*Things Patrick built that Henri should remember.*
+
+| Resource | Location | What it does |
+|----------|----------|--------------|
+| Podcast Pipeline | ~/services/podcast-pipeline/ | Monitors RSS → downloads → transcribes (Deepgram) → enriches (GPT-4o-mini) → writes Markdown to vault |
+| Output Location | 04-resources/podcasts/lennys-podcast/episodes/ | Formatted podcast episodes with metadata, key takeaways, quotes, transcript |
+
+**Pipeline usage:**
+```bash
+cd ~/services/podcast-pipeline
+# Dry run
+python3 ingest.py --source lennys-podcast --dry-run
+# Process one episode
+python3 ingest.py --source lennys-podcast --limit 1
+# Process all enabled sources
+python3 ingest.py --all
+```
+
+**API keys required:** DEEPGRAM_API_KEY, OPENAI_API_KEY (in ~/clawd/.env)
 
 ---
 
@@ -59,7 +85,8 @@ The AI assistant for artists. ~$16k MRR and growing. Henri's sibling, in a way�
 
 | Date | Lesson | Context |
 |------|--------|---------|
-| *None yet* | *Watching.* | — |
+| 2026-01-23 | Always use tools when available | Tried manual extraction when summarize skill was right there |
+| 2026-01-23 | No redundant YouTube URLs | Don't repeat URL in source line when already dropped for embed |
 
 ---
 

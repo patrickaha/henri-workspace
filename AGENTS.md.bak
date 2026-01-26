@@ -93,7 +93,7 @@ Database location: `~/henri.db`
 
 ```bash
 # Get canvas IDs for a channel
-sqlite3 ~/henri.db "SELECT canvas_context, canvas_todo, canvas_hooks FROM channels WHERE channel_id='CHANNEL_ID';"
+sqlite3 ~/henri.db "SELECT canvas_readme, canvas_todo, canvas_hooks FROM channels WHERE channel_id='CHANNEL_ID';"
 ```
 
 ## Skill Enforcement (CRITICAL)

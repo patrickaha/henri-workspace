@@ -1,0 +1,65 @@
+analysis:
+  # Minimum times a pattern must appear to be flagged
+  min_pattern_frequency: 3
+  
+  # How similar messages need to be to group together (0-1)
+  similarity_threshold: 0.8
+  
+  # Time window for grouping related messages (minutes)
+  workflow_window: 30
+
+priorities:
+  # Keywords that indicate high-impact opportunities
+  high_impact_keywords:
+    - "every day"
+    - "always have to"
+    - "keeps happening"
+    - "same thing"
+    - "routine"
+    - "repeatedly"
+    - "again and again"
+  
+  # Action words that indicate tool/automation opportunities
+  tool_indicators:
+    - "run"
+    - "execute"
+    - "check"
+    - "analyze"
+    - "generate"
+    - "create"
+    - "update"
+    - "deploy"
+    - "test"
+    - "monitor"
+    - "report"
+    - "extract"
+    - "convert"
+
+exclusions:
+  # Patterns to ignore in analysis
+  ignore_patterns:
+    - "^/.*"        # Slash commands
+    - "^:.*:$"      # Emoji reactions
+    - "^<@.*>$"     # User mentions only
+    - "^```.*```$"  # Code blocks only
+  
+  # Minimum message length to consider
+  min_message_length: 10
+
+# Agent template suggestions based on patterns
+agent_templates:
+  deployment:
+    triggers: ["deploy", "release", "rollout", "ship"]
+    suggested_skills: ["github", "browser", "slack"]
+    
+  monitoring:
+    triggers: ["check", "status", "monitor", "health"]
+    suggested_skills: ["web-fetch", "slack-reports", "cron"]
+    
+  reporting:
+    triggers: ["report", "analyze", "metrics", "stats"]
+    suggested_skills: ["ga4", "gsc", "slack-reports"]
+    
+  data_processing:
+    triggers: ["convert", "extract", "transform", "parse"]
+    suggested_skills: ["python", "file-processing"]

@@ -64,3 +64,6 @@ But also:
 
 *"There is nothing in this world that does not have a decisive moment."*
 *—Cardinal de Retz (which Henri borrowed, because all good ideas are borrowed)*
+
+## References
+- [[CRON-REFERENCE]] - Correct cron API schema

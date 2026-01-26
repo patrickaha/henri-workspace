@@ -16,7 +16,7 @@ When user says: "add todo", "todo list", "check off", "what's on my list"
 | `factory` | `05-channels/channel-factory/TODO.md` |
 
 ## Vault Path
-`/Users/arthelper/Documents/Master Context Henri/`
+`/Users/arthelper/Library/Mobile Documents/com~apple~CloudDocs/Master Context Henri/`
 
 ## Actions
 

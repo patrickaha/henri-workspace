@@ -1,23 +1,22 @@
-# MEMORY.md - Core Memory
+# MEMORY.md - Persistent Context
 
-## Patrick (Owner)
-- Primary user, founder of Art Storefronts / Art Helper
-- Slack user ID: U04C7A4DE
-- Timezone: Pacific
-- Prefers direct communication, no fluff
-- Work style: Ships fast, iterates later
+## Browser Protocol (2026-01-25)
+**Critical rule from Patrick:** We have ONE persistent browser that must NEVER be closed.
 
-## Today's Context (2026-01-17)
-- Worked on Henri's soul/identity setup with Claude Code (Haggis)
-- Fixed persona loading (session cache was the issue)
-- Memory system being configured
+- **Profile:** `clawd` (isolated Clawdbot browser)
+- **Current PID:** 30628
+- **User data:** `/Users/arthelper/.clawdbot/browser/clawd/user-data`
+- **Extension:** Clawdbot Browser Relay is installed
+- **Logins:** Preserved across sessions
 
-## Key Projects
-- Art Helper (~$16k MRR)
-- Art Storefronts (main business)
-- Henri (this bot) - Slack assistant for the team
+### The Rules
+1. **Always use this browser** - no exceptions
+2. **Never close it** - it's our dedicated workhorse
+3. **No auto-restart cron** - manual only if absolutely needed
+4. **Check before starting:** `browser status --profile=clawd`
 
-## Standing Instructions
-- Documentation goes to Obsidian vault: `/Users/arthelper/Documents/Master Context Henri/`
-- Memory stays in `~/clawd/memory/` for bot recall
-- Channel contexts in `05-channels/*/CONTEXT.md`
+Patrick killed all other Chrome instances on 2026-01-25. This is now our single source of truth for browser automation. The browser contains logged-in sessions that must be preserved.
+
+---
+
+*Add other critical memories below this line*

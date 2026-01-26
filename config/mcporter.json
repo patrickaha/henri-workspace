@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "amplitude": {
+      "baseUrl": "https://mcp.amplitude.com/mcp"
+    }
+  },
+  "imports": []
+}

@@ -14,7 +14,7 @@ Let Clawdbot's native memory tools write here:
 ---
 
 ## Documentation (Knowledge Base)
-**Location:** Obsidian vault at `/Users/arthelper/Documents/Master Context Henri/`
+**Location:** Obsidian vault at `/Users/arthelper/Library/Mobile Documents/com~apple~CloudDocs/Master Context Henri/`
 
 Human-readable, git-backed content:
 - Channel contexts (`05-channels/`)

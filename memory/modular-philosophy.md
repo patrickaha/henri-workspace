@@ -17,7 +17,7 @@
 | Scalable | 50+ hooks/canvas/docs stays organized |
 
 ### Pattern Examples
-- Hooks → Channel Cron canvas
+- Hooks → Channel Hooks canvas
 - Canvases → Channel canvas storage
 - Context → Channel CONTEXT.md
 - Hook docs → 06-hooks/ channel-specific files
