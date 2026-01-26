@@ -122,3 +122,37 @@ sqlite3 ~/henri.db "SELECT canvas_context, canvas_todo, canvas_hooks FROM channe
 - Always sync on wake
 - Never edit canvases directly
 - When in doubt, check the channel's CONTEXT.md
+
+## X.com Links (CRITICAL - Patrick drops these constantly)
+
+**Priority order for X.com/Twitter links:**
+
+1. **Always start with:** `bird read <url>` or `bird thread <url>`
+   - Bird is configured correctly and works
+   - This is the primary method
+
+2. **For links within X posts:** Use `firecrawl scrape <url> --format markdown`
+   - When the X post contains links to external content
+   - We have Firecrawl API keys configured
+
+3. **Backup plan:** Browser tool
+   - Use when bird has temporary issues
+   - Attach the Chrome extension to a tab
+
+**NEVER:**
+- Skip bird thinking there are auth issues (it's configured)
+- Try web_fetch on X.com (it won't work)
+- Use firecrawl on X.com directly (use it for links IN the posts)
+- Give up without trying the browser
+
+**The flow:**
+```bash
+# 1. Read the X post
+bird read <x.com-url>
+
+# 2. If the post has links, scrape those
+firecrawl scrape <link-from-post> --format markdown
+
+# 3. If bird fails, use browser
+browser open --profile chrome <x.com-url>
+```
