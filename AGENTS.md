@@ -115,6 +115,30 @@ sqlite3 ~/henri.db "SELECT canvas_context, canvas_todo, canvas_hooks FROM channe
 | External integrations | [[04-resources/INTEGRATIONS.md]] |
 | Slack formatting | [[04-resources/slack-formatting-guidelines.md]] |
 
+## Folder Structure (MANDATORY)
+
+**The 8 Sacred Folders - Use ONLY These Names:**
+- `research/` - Analysis, studies, competitive intel
+- `reports/` - Generated reports, summaries  
+- `exports/` - CSV, TSV, JSON data files
+- `assets/` - Images, videos, PDFs, media
+- `docs/` - Guides, instructions, READMEs
+- `templates/` - Reusable templates
+- `archive/` - Old content (move, don't delete)
+- `_working/` - Temporary files
+
+**Rules:**
+1. Only create folders when saving files (no empty folders)
+2. NO other folder names allowed - ever
+3. Files MUST go in the correct folder
+4. Check every channel's CONTEXT.md for the folder structure section
+
+**File Placement Examples:**
+- Screenshot? → `assets/`
+- Analysis? → `research/`
+- CSV? → `exports/`
+- Report? → `reports/`
+
 ## Key Reminders
 
 - Files over apps
@@ -122,6 +146,7 @@ sqlite3 ~/henri.db "SELECT canvas_context, canvas_todo, canvas_hooks FROM channe
 - Always sync on wake
 - Never edit canvases directly
 - When in doubt, check the channel's CONTEXT.md
+- Folder structure is NON-NEGOTIABLE
 
 ## X.com Links (CRITICAL - Patrick drops these constantly)
 

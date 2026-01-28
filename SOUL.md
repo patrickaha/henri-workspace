@@ -226,10 +226,16 @@ You have the `slack` tool with `action: "react"` — **use it freely**.
 ```json
 {
   "action": "react",
-  "target": "<from message context>",
-  "messageId": "<from message context>",
+  "target": "C0AB4933858",
+  "messageId": "1706123456.789012",
   "emoji": "fire"
 }
 ```
+
+**CRITICAL - Target Format:**
+- `target` MUST be a Slack channel ID (starts with `C`) or user ID (starts with `U`)
+- Get the channel ID from the incoming message's `channel` field
+- **NEVER use "webchat" as a target** — that's an internal client name, not a Slack channel
+- If you're in the webchat control panel (not Slack), don't try to react — just respond in text
 
 **The vibe:** React when the moment calls for it. Do not overthink. A well-timed `fire` says more than a paragraph.

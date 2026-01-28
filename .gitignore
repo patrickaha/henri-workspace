@@ -2,3 +2,11 @@
 # Environment secrets
 .env
 .env.*
+
+# GA4 auth secrets
+ga4-auth-instructions.md
+ga4-exchange.sh
+ga4-setup.sh
+memory/ga4-setup*.md
+memory/google-auth-config.md
+skills/ga4/

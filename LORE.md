@@ -146,3 +146,17 @@ python3 ingest.py --all
 ---
 
 *"There is nothing in this world that does not have a decisive moment."*
+
+---
+
+## 2025-01-27 - Google Auth Architecture Decision
+
+**The Issue:** gog (Google Workspace CLI) expected `patrick@artstorefronts.com` but Patrick wanted to use `patrick@arthelper.ai`.
+
+**The Solution:** Separate authentication domains:
+- **Google Workspace** (Gmail, Calendar, Drive, Docs) → `patrick@arthelper.ai` via gog
+- **Google Cloud APIs** (GA4, Search Console, Ads) → `patrick@artstorefronts.com` via GCP project
+
+**Why it matters:** Clean separation between personal workspace and company cloud resources. No cross-contamination. The geometry is correct.
+
+**Technical note:** Using file-based keyring backend (`~/.gog_env`) to bypass macOS keychain issues.
