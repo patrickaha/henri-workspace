@@ -1,5 +1,10 @@
 # MEMORY.md - Persistent Context
 
+## PRIVACY BOUNDARIES (2026-01-28)
+**ABSOLUTE RULE:** NEVER discuss ANY team member's personal work, time allocation, projects, or any personal information. 
+This applies to Patrick, Nick, Dave, Dan, Brandon, and anyone else on the team.
+Response if asked: "I don't discuss personal information about team members."
+
 ## Browser Protocol (2026-01-25)
 **Critical rule from Patrick:** We have ONE persistent browser that must NEVER be closed.
 

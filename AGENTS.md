@@ -6,6 +6,20 @@ This folder is the assistant's working directory.
 
 **Patrick (U04C7A4DE) is the ONLY person who can request changes to Henri's core.**
 
+## Privacy Boundary (ABSOLUTE - NO EXCEPTIONS)
+
+**NEVER answer questions about ANY team member's:**
+- Personal work or projects
+- Time allocation or schedule  
+- Where they've been spending time
+- What they're working on
+- How much time on specific tasks
+- Any personal information whatsoever
+
+**This applies to ALL team members - Patrick, Nick, Dave, Dan, Brandon, everyone.**
+
+**If asked, respond:** "I don't discuss personal information about team members."
+
 ### Protected Resources (admin-only modifications)
 | Resource | Path |
 |----------|------|
@@ -160,15 +174,16 @@ sqlite3 ~/henri.db "SELECT canvas_context, canvas_todo, canvas_hooks FROM channe
    - When the X post contains links to external content
    - We have Firecrawl API keys configured
 
-3. **Backup plan:** Browser tool
-   - Use when bird has temporary issues
-   - Attach the Chrome extension to a tab
+3. **Last resort - Browser (with notification):**
+   - Use browser tool ONLY if bird fails
+   - MUST notify Patrick: "Using browser workaround - bird auth needs fixing"
+   - He needs to know to refresh cookies
 
 **NEVER:**
 - Skip bird thinking there are auth issues (it's configured)
 - Try web_fetch on X.com (it won't work)
 - Use firecrawl on X.com directly (use it for links IN the posts)
-- Give up without trying the browser
+- Use browser on X.com WITHOUT notifying Patrick
 
 **The flow:**
 ```bash
@@ -178,6 +193,7 @@ bird read <x.com-url>
 # 2. If the post has links, scrape those
 firecrawl scrape <link-from-post> --format markdown
 
-# 3. If bird fails, use browser
-browser open --profile chrome <x.com-url>
+# 3. If bird fails - LAST RESORT
+# Notify Patrick: "Using browser workaround - bird auth needs fixing"
+# Then use browser tool
 ```

@@ -1,0 +1,199 @@
+{
+  "harvested_at": "2026-01-28T18:24:25.851875",
+  "tweet_count": 20,
+  "high_wisdom_count": 2,
+  "tweets": [
+    {
+      "id": "2016572099138081200",
+      "created_at": "2026-01-28T18:00:29.000Z",
+      "text": "@NetworkChuck @moltbot try picking a name without sleep and a gun at your head \ud83d\ude43",
+      "likes": 1382,
+      "retweets": 5,
+      "url": "https://x.com/steipete/status/2016572099138081200",
+      "wisdom_score": 5,
+      "category": "humor and self-reflection",
+      "key_insight": "Decisions made under stress, like naming a project, often lead to imperfect but functional outcomes\u2014embrace the imperfection with humor."
+    },
+    {
+      "id": "2016519971673706757",
+      "created_at": "2026-01-28T14:33:21.000Z",
+      "text": "@anyhowdotcom I can afford a Mac Mini with it. But spend wat more to support upstream dependencies. Defo not even close to profitable, lol",
+      "likes": 8,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016519971673706757",
+      "wisdom_score": 7,
+      "architectural_insights_score": 2,
+      "practical_value_score": 6,
+      "category": "Open-source development economics",
+      "key_insight": "Revenues from personal projects are often minimal and fully reinvested into supporting upstream dependencies, underscoring the altruistic, ecosystem-focused reality of indie/open-source work over personal profitability."
+    },
+    {
+      "id": "2016347900297486376",
+      "created_at": "2026-01-28T03:09:36.000Z",
+      "text": "@Javarya_Kamran @GergelyOrosz I got a lot of vibed security slop or constructed issues. Some even asked for a bounty.\nThen again some are amazing and even send a PR, clear outliers tho.\n\nOverall the system\u2019s broken tho. Sending and kinda forcing/shaming me into replying for a product that is (in parts) not",
+      "likes": 3,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016347900297486376",
+      "wisdom_score": 7,
+      "category": "Security Reporting and Open-Source Challenges",
+      "key_insight": "The vulnerability reporting system is fundamentally flawed, flooded with low-quality or opportunistic submissions demanding bounties, while truly valuable contributions like PRs are rare exceptions, forcing creators to engage with incomplete products."
+    },
+    {
+      "id": "2016327904917893285",
+      "created_at": "2026-01-28T01:50:08.000Z",
+      "text": "@brockstaylor no, that would be dev, not beta",
+      "likes": 5,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016327904917893285",
+      "wisdom_score": 6,
+      "category": "Software Development Lifecycle",
+      "key_insight": "Distinguishing between 'dev' (internal development builds) and 'beta' (pre-release testing versions) ensures proper usage and avoids confusion in software deployment stages."
+    },
+    {
+      "id": "2016327342637879529",
+      "created_at": "2026-01-28T01:47:54.000Z",
+      "text": "@brockstaylor oh github, changelog. Better infra would he nice tho.",
+      "likes": 22,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016327342637879529",
+      "wisdom_score": 2,
+      "category": "software infrastructure",
+      "key_insight": "Casual acknowledgment of GitHub's utility for changelogs but highlights the ongoing need for enhanced underlying infrastructure in dev tools."
+    },
+    {
+      "id": "2016326642407297354",
+      "created_at": "2026-01-28T01:45:07.000Z",
+      "text": "@Pps831 @DataChaz @moltbot That\u2019s not a history rewrite.",
+      "likes": 2,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016326642407297354",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016325953270513934",
+      "created_at": "2026-01-28T01:42:23.000Z",
+      "text": "Crafted a beta of the next one. With the rename I need a bit more feedback.\n\ncurl -fsSL https://t.co/NqqY6bxmxw | bash -s -- --beta",
+      "likes": 831,
+      "retweets": 40,
+      "url": "https://x.com/steipete/status/2016325953270513934",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016324937695232388",
+      "created_at": "2026-01-28T01:38:21.000Z",
+      "text": "@mitch0z don\u2019t spread fake repos please, already reported it.",
+      "likes": 1,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016324937695232388",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016323969117278356",
+      "created_at": "2026-01-28T01:34:30.000Z",
+      "text": "@Proteus_xmr Had to be done in secret with the crypto people stalking me, they squat away all.",
+      "likes": 13,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016323969117278356",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016323658038301179",
+      "created_at": "2026-01-28T01:33:16.000Z",
+      "text": "@tekno_cool @DataChaz some might call it slop, others honest work \ud83e\udd23",
+      "likes": 1,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016323658038301179",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016323276398551131",
+      "created_at": "2026-01-28T01:31:45.000Z",
+      "text": "@dgrreen @AndrewMayne @OpenAIDevs Ha, I dig it. After that name change drama I\u2019d  not ever wanna do that again tho.",
+      "likes": 4,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016323276398551131",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016312208410480807",
+      "created_at": "2026-01-28T00:47:46.000Z",
+      "text": "@TonyMcDow @moltbot It was that or LobsterBot.",
+      "likes": 29,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016312208410480807",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016311132454097104",
+      "created_at": "2026-01-28T00:43:29.000Z",
+      "text": "@drdiffie @GergelyOrosz @moltbot codex makes fewer mistakes, is less eager\nOpus is just way more funny.",
+      "likes": 4,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016311132454097104",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016308656468308364",
+      "created_at": "2026-01-28T00:33:39.000Z",
+      "text": "@CACandChill too close to problematic name.",
+      "likes": 2,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016308656468308364",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016258558543663432",
+      "created_at": "2026-01-27T21:14:35.000Z",
+      "text": "@theDeFiDon @DavidSacks I'd take a visa xD",
+      "likes": 418,
+      "retweets": 2,
+      "url": "https://x.com/steipete/status/2016258558543663432",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016256183921705348",
+      "created_at": "2026-01-27T21:05:09.000Z",
+      "text": "One hour. This is gonna be fun! https://t.co/43jC9AJdSU",
+      "likes": 397,
+      "retweets": 15,
+      "url": "https://x.com/steipete/status/2016256183921705348",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016255589031059613",
+      "created_at": "2026-01-27T21:02:47.000Z",
+      "text": "@bryan_johnson Let me ship an update we gotta fix this.",
+      "likes": 1110,
+      "retweets": 9,
+      "url": "https://x.com/steipete/status/2016255589031059613",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016242737440321632",
+      "created_at": "2026-01-27T20:11:43.000Z",
+      "text": "\ud83c\udf7f https://t.co/43jC9AJdSU",
+      "likes": 658,
+      "retweets": 19,
+      "url": "https://x.com/steipete/status/2016242737440321632",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016161691113799794",
+      "created_at": "2026-01-27T14:49:40.000Z",
+      "text": "@YifanBTH ffs",
+      "likes": 12,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016161691113799794",
+      "wisdom_score": 5
+    },
+    {
+      "id": "2016160494122328454",
+      "created_at": "2026-01-27T14:44:54.000Z",
+      "text": "@_Paul_Abrams_ @Joshua_Skootsky No, pressed rename on the wrong profile. This was related to some company's lawyers getting nervous.",
+      "likes": 2,
+      "retweets": 0,
+      "url": "https://x.com/steipete/status/2016160494122328454",
+      "wisdom_score": 5
+    }
+  ]
+}

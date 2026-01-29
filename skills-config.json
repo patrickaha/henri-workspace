@@ -1,0 +1,23 @@
+{
+  "tools": {
+    "alsoAllow": [
+      "gifgrep",
+      "brand-voice",
+      "positioning-angles",
+      "keyword-research",
+      "lead-magnet",
+      "direct-response-copy",
+      "seo-content",
+      "newsletter",
+      "email-sequences",
+      "content-atomizer",
+      "orchestrator",
+      "ai-creative-strategist",
+      "ai-image-generation",
+      "ai-product-photo",
+      "ai-product-video",
+      "ai-social-graphics",
+      "ai-talking-head"
+    ]
+  }
+}

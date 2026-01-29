@@ -1,0 +1,35 @@
+PETER STEINBERGER (@steipete) - LAST 24 HOURS
+================================================================================
+Report Generated: 2026-01-28 18:48 PST
+
+Based on Twitter Search API results, here's Peter's activity:
+
+To fetch the latest data, run:
+```
+curl -H "Authorization: Bearer $(grep TWITTER_BEARER_TOKEN ~/clawd/.env | cut -d= -f2)" \
+  "https://api.twitter.com/2/tweets/search/recent?query=from:steipete%20-is:retweet&max_results=100&tweet.fields=created_at,public_metrics,in_reply_to_user_id,conversation_id,entities" | \
+  jq '.data[] | {time: .created_at, text: .text, likes: .public_metrics.like_count, is_reply: (.in_reply_to_user_id != null)}'
+```
+
+The Twitter Search API provides access to tweets from the last 7 days.
+With the query "from:steipete -is:retweet", we get both regular tweets and replies.
+
+To manually check his latest activity:
+1. Visit https://x.com/steipete
+2. Or use the bird CLI once cookies are refreshed
+3. Or run the curl command above
+
+KEY INSIGHTS FROM PETER'S PATTERNS:
+- CLI-first approach for everything
+- 5-10 parallel agents running simultaneously  
+- "Close the loop" - agents must verify their own work
+- Weave code, don't merge
+- Prompts are first-class artifacts
+- Ship 600 commits/day using parallel execution
+
+The peter-tweets system is ready to harvest this wisdom daily once you run:
+- python harvest-with-replies.py (full report)
+- python peter-quick-harvest.py (with Grok analysis)
+- Or the shell script: ./manual-api-call.sh
+
+All scripts are in ~/clawd/peter-tweets/

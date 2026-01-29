@@ -1,0 +1,560 @@
+PETER STEINBERGER - TWITTER ACTIVITY REPORT
+Generated: 2026-01-28 18:50:29.120427
+Total: 100 items (19 tweets, 81 replies)
+
+TWEETS:
+
+2026-01-28T01:42:23.000Z
+Crafted a beta of the next one. With the rename I need a bit more feedback.
+
+curl -fsSL https://t.co/NqqY6bxmxw | bash -s -- --beta
+https://x.com/steipete/status/2016325953270513934
+--------------------------------------------------------------------------------
+
+2026-01-27T21:05:09.000Z
+One hour. This is gonna be fun! https://t.co/43jC9AJdSU
+https://x.com/steipete/status/2016256183921705348
+--------------------------------------------------------------------------------
+
+2026-01-27T20:11:43.000Z
+🍿 https://t.co/43jC9AJdSU
+https://x.com/steipete/status/2016242737440321632
+--------------------------------------------------------------------------------
+
+2026-01-27T11:36:08.000Z
+had to build an army before I could build @moltbot. https://t.co/zHk6TAqPSU
+https://x.com/steipete/status/2016112986415309290
+--------------------------------------------------------------------------------
+
+2026-01-27T11:20:00.000Z
+Mario was the OG pentester for @moltbot (the 4th name now) https://t.co/3nMLtvfzox
+https://x.com/steipete/status/2016108926077481135
+--------------------------------------------------------------------------------
+
+2026-01-27T10:54:30.000Z
+GitHub's resolved. This only affected my personal account, not the org (messed up the rename)
+X will take another day, it's @moltbot - not any of the 20 scam variations of it.
+
+You don't need to do anything for the next release - update will work just as before.
+
+ ̶C̶l̶a̶w̶d̶
+https://x.com/steipete/status/2016102509324984572
+--------------------------------------------------------------------------------
+
+2026-01-27T10:05:35.000Z
+Meanwhile Molty is manically trying to find a new avatar... and things aren't going well. https://t.co/hGgzonySmW
+https://x.com/steipete/status/2016090201198588268
+--------------------------------------------------------------------------------
+
+2026-01-27T09:22:01.000Z
+Crypto folks: I was forced to rename the account by Anthropic. Wasn't my decision.
+https://x.com/steipete/status/2016079236780449975
+--------------------------------------------------------------------------------
+
+2026-01-27T08:58:51.000Z
+Do I have anyone from GitHub in my timeline who could help me get my account on GitHub back?
+It was snatched by crypto scammers.
+https://x.com/steipete/status/2016073406840476131
+--------------------------------------------------------------------------------
+
+2026-01-27T08:53:42.000Z
+To all crypto folks: 
+Please stop pinging me, stop harassing me. 
+I will never do a coin.
+Any project that lists me as coin owner is a SCAM.
+No, I will not accept fees.
+You are actively damanging the project.
+https://x.com/steipete/status/2016072109601001611
+--------------------------------------------------------------------------------
+
+2026-01-27T08:38:25.000Z
+Had to rename our accounts for trademark stuff and messed up the GitHub rename and the X rename got snatched by crypto shills.
+
+That went wonderful.
+
+@moltbot it is.
+https://x.com/steipete/status/2016068265391354181
+--------------------------------------------------------------------------------
+
+2026-01-27T05:16:44.000Z
+Kudos to Vignesh and the team I've built around the last few days. https://t.co/q6CXjOIqNX
+https://x.com/steipete/status/2016017508835156297
+--------------------------------------------------------------------------------
+
+2026-01-27T03:02:43.000Z
+🫶 https://t.co/IcuiytqbV1
+https://x.com/steipete/status/2015983782415725001
+--------------------------------------------------------------------------------
+
+2026-01-27T01:07:11.000Z
+The amount of crap I get for putting out a hobby project for free is quite something.
+
+People treat this like a multi-million dollar business. Security researchers demanding a bounty.
+Heck, I can barely buy a Mac Mini from the Sponsors.
+
+It's supposed to inspire people. And I'm
+https://x.com/steipete/status/2015954706883846540
+--------------------------------------------------------------------------------
+
+2026-01-27T00:35:22.000Z
+Some of the PRs... https://t.co/sNHe8o1TFy
+https://x.com/steipete/status/2015946700951609662
+--------------------------------------------------------------------------------
+
+2026-01-26T23:02:05.000Z
+POV: state of my brain rn trying to reply to pings and shipping code. https://t.co/tR8Mko84t4
+https://x.com/steipete/status/2015923226803662870
+--------------------------------------------------------------------------------
+
+2026-01-26T22:53:52.000Z
+brb framing this on my wall https://t.co/IK0bESvrZv
+https://x.com/steipete/status/2015921156289642618
+--------------------------------------------------------------------------------
+
+2026-01-26T19:28:01.000Z
+CRAP THEY FIGURED IT OUT https://t.co/MPm9ftjW0N
+https://x.com/steipete/status/2015869352390648280
+--------------------------------------------------------------------------------
+
+2026-01-26T19:18:44.000Z
+summarize https://t.co/cagj6GDjh7 --model openai/gpt-5.2 --slides
+
+I know I'm biased but I love https://t.co/QJwbQjqtID https://t.co/WsgPiBjnC4 https://t.co/DbdUt2RzSF
+https://x.com/steipete/status/2015867017769754973
+--------------------------------------------------------------------------------
+
+
+REPLIES:
+
+2026-01-28T18:00:29.000Z
+@NetworkChuck @moltbot try picking a name without sleep and a gun at your head 🙃
+https://x.com/steipete/status/2016572099138081200
+--------------------------------------------------------------------------------
+
+2026-01-28T14:33:21.000Z
+@anyhowdotcom I can afford a Mac Mini with it. But spend wat more to support upstream dependencies. Defo not even close to profitable, lol
+https://x.com/steipete/status/2016519971673706757
+--------------------------------------------------------------------------------
+
+2026-01-28T03:09:36.000Z
+@Javarya_Kamran @GergelyOrosz I got a lot of vibed security slop or constructed issues. Some even asked for a bounty.
+Then again some are amazing and even send a PR, clear outliers tho.
+
+Overall the system’s broken tho. Sending and kinda forcing/shaming me into replying for a product that is (in parts) not
+https://x.com/steipete/status/2016347900297486376
+--------------------------------------------------------------------------------
+
+2026-01-28T01:50:08.000Z
+@brockstaylor no, that would be dev, not beta
+https://x.com/steipete/status/2016327904917893285
+--------------------------------------------------------------------------------
+
+2026-01-28T01:47:54.000Z
+@brockstaylor oh github, changelog. Better infra would he nice tho.
+https://x.com/steipete/status/2016327342637879529
+--------------------------------------------------------------------------------
+
+2026-01-28T01:45:07.000Z
+@Pps831 @DataChaz @moltbot That’s not a history rewrite.
+https://x.com/steipete/status/2016326642407297354
+--------------------------------------------------------------------------------
+
+2026-01-28T01:38:21.000Z
+@mitch0z don’t spread fake repos please, already reported it.
+https://x.com/steipete/status/2016324937695232388
+--------------------------------------------------------------------------------
+
+2026-01-28T01:34:30.000Z
+@Proteus_xmr Had to be done in secret with the crypto people stalking me, they squat away all.
+https://x.com/steipete/status/2016323969117278356
+--------------------------------------------------------------------------------
+
+2026-01-28T01:33:16.000Z
+@tekno_cool @DataChaz some might call it slop, others honest work 🤣
+https://x.com/steipete/status/2016323658038301179
+--------------------------------------------------------------------------------
+
+2026-01-28T01:31:45.000Z
+@dgrreen @AndrewMayne @OpenAIDevs Ha, I dig it. After that name change drama I’d  not ever wanna do that again tho.
+https://x.com/steipete/status/2016323276398551131
+--------------------------------------------------------------------------------
+
+2026-01-28T00:47:46.000Z
+@TonyMcDow @moltbot It was that or LobsterBot.
+https://x.com/steipete/status/2016312208410480807
+--------------------------------------------------------------------------------
+
+2026-01-28T00:43:29.000Z
+@drdiffie @GergelyOrosz @moltbot codex makes fewer mistakes, is less eager
+Opus is just way more funny.
+https://x.com/steipete/status/2016311132454097104
+--------------------------------------------------------------------------------
+
+2026-01-28T00:33:39.000Z
+@CACandChill too close to problematic name.
+https://x.com/steipete/status/2016308656468308364
+--------------------------------------------------------------------------------
+
+2026-01-27T21:14:35.000Z
+@theDeFiDon @DavidSacks I'd take a visa xD
+https://x.com/steipete/status/2016258558543663432
+--------------------------------------------------------------------------------
+
+2026-01-27T21:02:47.000Z
+@bryan_johnson Let me ship an update we gotta fix this.
+https://x.com/steipete/status/2016255589031059613
+--------------------------------------------------------------------------------
+
+2026-01-27T14:49:40.000Z
+@YifanBTH ffs
+https://x.com/steipete/status/2016161691113799794
+--------------------------------------------------------------------------------
+
+2026-01-27T14:44:54.000Z
+@_Paul_Abrams_ @Joshua_Skootsky No, pressed rename on the wrong profile. This was related to some company's lawyers getting nervous.
+https://x.com/steipete/status/2016160494122328454
+--------------------------------------------------------------------------------
+
+2026-01-27T13:14:23.000Z
+@smeidu @Dynatrace @fdorfbauer Fail des Jahres.
+https://x.com/steipete/status/2016137712764322126
+--------------------------------------------------------------------------------
+
+2026-01-27T12:50:42.000Z
+@_ReverseAI_ @moltbot Still open source and free. Just a different name.
+https://x.com/steipete/status/2016131752088027329
+--------------------------------------------------------------------------------
+
+2026-01-27T12:47:50.000Z
+@RodrigoSalvo14 @josesaezmerino Vibed slop and factually false. Those scanners find the mDNS broadcast, but the ports are not open.
+https://t.co/8AzlBKDTlp
+
+We built verifyable security tests with it. https://t.co/qMl7LekdjE
+
+But yeah it has rough edges. I built this as a hobby. Don't treat it like a megacorp.
+https://x.com/steipete/status/2016131033196814377
+--------------------------------------------------------------------------------
+
+2026-01-27T12:43:26.000Z
+@anthfb Oh damn, thank you for choosing that!
+https://x.com/steipete/status/2016129922998137173
+--------------------------------------------------------------------------------
+
+2026-01-27T12:41:23.000Z
+@thatssovaibhav @ollama @moltbot Sorry. Not happy about it either.
+
+But it grows on me.
+https://x.com/steipete/status/2016129409170714803
+--------------------------------------------------------------------------------
+
+2026-01-27T11:37:14.000Z
+@Void_Logistics @moltbot send PRs and help maintain it.
+https://x.com/steipete/status/2016113262958465173
+--------------------------------------------------------------------------------
+
+2026-01-27T11:34:58.000Z
+@patricioguzmano I renamed the wrong account in the stress.
+And some shill captured it before I could rename it back.
+project runs in an org and was not affected.
+https://x.com/steipete/status/2016112694848295070
+--------------------------------------------------------------------------------
+
+2026-01-27T11:06:03.000Z
+This has been fixed. Thanks everyone. 🙏
+https://x.com/steipete/status/2016105415952548282
+--------------------------------------------------------------------------------
+
+2026-01-27T11:02:46.000Z
+@Workflow_AI Trademark
+https://x.com/steipete/status/2016104591868215360
+--------------------------------------------------------------------------------
+
+2026-01-27T10:58:29.000Z
+@TheDevFUN @moltbot How so? What single positive thing did you other than stealing my time and energy?
+https://x.com/steipete/status/2016103513332310016
+--------------------------------------------------------------------------------
+
+2026-01-27T10:26:30.000Z
+@CoderGeeta Yup, else they'll come after you.
+https://x.com/steipete/status/2016095465465401439
+--------------------------------------------------------------------------------
+
+2026-01-27T10:16:50.000Z
+@_alphashark_ it wasn't hacked, I messed up the rename and my old name was snatched in 10 seconds.
+https://x.com/steipete/status/2016093029702988077
+--------------------------------------------------------------------------------
+
+2026-01-27T10:13:11.000Z
+@jrdi I messed up the rename. Not hacked, misclicked.
+https://x.com/steipete/status/2016092114539380897
+--------------------------------------------------------------------------------
+
+2026-01-27T10:10:10.000Z
+@barbellier22 @moltbot not allowed to
+https://x.com/steipete/status/2016091353365537247
+--------------------------------------------------------------------------------
+
+2026-01-27T10:09:23.000Z
+@hamishjones @moltbot The download link is fine. This is an org, not my account. Was a rename mistake in the rush.
+https://x.com/steipete/status/2016091155910320528
+--------------------------------------------------------------------------------
+
+2026-01-27T10:03:37.000Z
+@ositawebx lega;
+https://x.com/steipete/status/2016089705595523364
+--------------------------------------------------------------------------------
+
+2026-01-27T09:30:58.000Z
+@ddevaal @moltbot Hey at least it's some good cinema.
+https://x.com/steipete/status/2016081486693249452
+--------------------------------------------------------------------------------
+
+2026-01-27T09:30:33.000Z
+@apoorveth Because it's only that community that harasses me on all channels and they were already waiting.
+https://x.com/steipete/status/2016081382783455572
+--------------------------------------------------------------------------------
+
+2026-01-27T09:25:57.000Z
+@Drew_Invests neither. TBD
+https://x.com/steipete/status/2016080227907097000
+--------------------------------------------------------------------------------
+
+2026-01-27T09:23:14.000Z
+@mudumbaharsha @moltbot Nah, that needs to change too but that's even messier.
+https://x.com/steipete/status/2016079544315232346
+--------------------------------------------------------------------------------
+
+2026-01-27T09:13:56.000Z
+@skrootimburg Dude unless it's a verified email everyone can create any git commit. Learn basic git commands.
+https://x.com/steipete/status/2016077203121811662
+--------------------------------------------------------------------------------
+
+2026-01-27T08:43:13.000Z
+@camsoft2000 I smelled that and renamed it to @moltbot !
+https://x.com/steipete/status/2016069472650477971
+--------------------------------------------------------------------------------
+
+2026-01-27T06:56:58.000Z
+@hunvreus @Josico120 I wish, that shit is hard to get in Europe!
+https://x.com/steipete/status/2016042734562222257
+--------------------------------------------------------------------------------
+
+2026-01-27T06:30:38.000Z
+@LingChunHui @moltbot https://t.co/YMW5BvRIXR for the daily slop
+https://x.com/steipete/status/2016036106475614505
+--------------------------------------------------------------------------------
+
+2026-01-27T06:12:09.000Z
+@GauravyadavGy @arun_sankr @eliasstravik @moltbot use browser automation
+https://x.com/steipete/status/2016031454279454816
+--------------------------------------------------------------------------------
+
+2026-01-27T06:11:48.000Z
+@julianengel 😅
+https://x.com/steipete/status/2016031365561544961
+--------------------------------------------------------------------------------
+
+2026-01-27T05:44:34.000Z
+@dariogriffo check the faq!
+https://x.com/steipete/status/2016024514396606945
+--------------------------------------------------------------------------------
+
+2026-01-27T04:58:28.000Z
+@ohmygeosh love this
+https://x.com/steipete/status/2016012913081790794
+--------------------------------------------------------------------------------
+
+2026-01-27T04:42:37.000Z
+@canineunit26 That's not the point.
+It's called appreciation for effort.
+I'll distribute it across all contributors.
+https://x.com/steipete/status/2016008921396187484
+--------------------------------------------------------------------------------
+
+2026-01-27T03:49:23.000Z
+@Kulture_Crypto it's a joke to make fun of crypto folks, not a real thing.
+https://x.com/steipete/status/2015995526815085032
+--------------------------------------------------------------------------------
+
+2026-01-27T02:47:10.000Z
+@sukhoilover @vasuman @altryne @moltbot Writing correct code in large codebases without missing half the stuff.
+https://x.com/steipete/status/2015979871000817739
+--------------------------------------------------------------------------------
+
+2026-01-27T01:24:11.000Z
+@theonejvo After arguing over what is a bug or not.
+Nah, not naming people.
+https://x.com/steipete/status/2015958985224933520
+--------------------------------------------------------------------------------
+
+2026-01-27T01:13:10.000Z
+@altryne @vasuman @moltbot I don't let Slopus on my codebase, lol.
+Could not have built it with that in that time.
+https://x.com/steipete/status/2015956211921801404
+--------------------------------------------------------------------------------
+
+2026-01-27T01:12:27.000Z
+@ai_sentience @moltbot It's not a model we support or tested. Probably needs an hour to polish the silliness out of it.
+
+PRs welcome!
+https://x.com/steipete/status/2015956034636943653
+--------------------------------------------------------------------------------
+
+2026-01-27T00:40:45.000Z
+@ai_sentience @moltbot That's weird. Meanwhile folks use it with Opus, GPT, MiniMax and Gemini, and report that it works great. (okay Google's model is a bit silly at times...)
+
+Smells more like an AI hallucination to me.
+https://x.com/steipete/status/2015948057016168647
+--------------------------------------------------------------------------------
+
+2026-01-27T00:05:23.000Z
+@0xLaxo @petergyang Hey by now I can almost buy one Mac Mini with the sponsors!
+https://x.com/steipete/status/2015939153028895039
+--------------------------------------------------------------------------------
+
+2026-01-26T23:04:31.000Z
+@SoritesMinor @AndresOLZ Verifying/fixing bugs on the issue tracker rn seems the bigggest thing I need help with.
+https://x.com/steipete/status/2015923837867540506
+--------------------------------------------------------------------------------
+
+2026-01-26T23:03:22.000Z
+@JolupCCTV shrimp is our support bot
+lobster for the entertainment
+https://x.com/steipete/status/2015923549643362729
+--------------------------------------------------------------------------------
+
+2026-01-26T22:59:06.000Z
+@radmakr @Dimillian ☠️
+
+May you dream about XFA and JScript.
+https://x.com/steipete/status/2015922474588721438
+--------------------------------------------------------------------------------
+
+2026-01-26T22:58:35.000Z
+@RealSid08 https://t.co/OxV98L0X7j
+https://x.com/steipete/status/2015922341960728814
+--------------------------------------------------------------------------------
+
+2026-01-26T22:57:43.000Z
+@RandyMWatts @Zaddyzaddy Not true; you can check GitHub for release timestamps.
+https://x.com/steipete/status/2015922127300379103
+--------------------------------------------------------------------------------
+
+2026-01-26T22:57:10.000Z
+@HundtRichard @NicolasZu @moltbot Well done. Meanwhile, all docs + security audit yells when people use Haiku. It's just not the right fit and outright dangerous.
+https://x.com/steipete/status/2015921986757673291
+--------------------------------------------------------------------------------
+
+2026-01-26T22:54:23.000Z
+@cooIimus at this point they slowly overtake the crypto mails I'm getting
+https://x.com/steipete/status/2015921286308839856
+--------------------------------------------------------------------------------
+
+2026-01-26T22:49:31.000Z
+@apoorvdarshan Man, I wish I'd looked like that these days.
+https://x.com/steipete/status/2015920061576364126
+--------------------------------------------------------------------------------
+
+2026-01-26T22:48:00.000Z
+@thomasjeans no; best option is a coding agent and asking q
+https://x.com/steipete/status/2015919681056407649
+--------------------------------------------------------------------------------
+
+2026-01-26T22:43:45.000Z
+@eilertsendev lol, they don't even cover 10% of my costs.
+https://x.com/steipete/status/2015918610984677567
+--------------------------------------------------------------------------------
+
+2026-01-26T22:43:27.000Z
+@nbaschez By Google! I didn't change the defaults.
+https://x.com/steipete/status/2015918535747293417
+--------------------------------------------------------------------------------
+
+2026-01-26T22:41:23.000Z
+@sterlingcrispin @0xMerth @moltbot And that's my fault?
+https://x.com/steipete/status/2015918015099883715
+--------------------------------------------------------------------------------
+
+2026-01-26T22:40:29.000Z
+@Francesco_Oddo https://t.co/olHvS5i8r4
+https://x.com/steipete/status/2015917787504361801
+--------------------------------------------------------------------------------
+
+2026-01-26T22:35:49.000Z
+@yoheinakajima no idea
+https://x.com/steipete/status/2015916614378467486
+--------------------------------------------------------------------------------
+
+2026-01-26T20:11:48.000Z
+@aybuilds ofc!
+https://x.com/steipete/status/2015880373243170991
+--------------------------------------------------------------------------------
+
+2026-01-26T20:11:07.000Z
+@wurm_lukas god damn that was mt chance THE PUN and I crabed it.
+https://x.com/steipete/status/2015880200056078526
+--------------------------------------------------------------------------------
+
+2026-01-26T20:08:31.000Z
+@gnrtvty @hznus @moltbot @AlexFinn Oh no I'd never merge a Rust rewrite, that makes zero sense. I just wanted to make a point that Rust is a less accessible language for people than TS, and I wanted this to be easy and hackable.
+https://x.com/steipete/status/2015879546382278830
+--------------------------------------------------------------------------------
+
+2026-01-26T20:07:43.000Z
+@VoteforPedro @h9lxyz @moltbot ... which is not hard if you open claude code and type "fix it I get this auth error"...
+https://x.com/steipete/status/2015879342941753434
+--------------------------------------------------------------------------------
+
+2026-01-26T20:07:22.000Z
+@VoteforPedro @h9lxyz @moltbot The defaut is closed. People need to go out of their way to open it.
+https://x.com/steipete/status/2015879256702644386
+--------------------------------------------------------------------------------
+
+2026-01-26T20:02:35.000Z
+@_JohnHammond Very fair review, thanks John! I tweaked some of our docs based on your review. https://t.co/Zo1kLaQdlT
+https://x.com/steipete/status/2015878053944033473
+--------------------------------------------------------------------------------
+
+2026-01-26T19:27:25.000Z
+@ketacode My bots only reply from the bot account. Here it's always me.
+
+There were a few days back in Nov where I experimented with marked bot-replies, not something I think is a good idea, even if marked.
+https://x.com/steipete/status/2015869202037358735
+--------------------------------------------------------------------------------
+
+2026-01-26T19:25:37.000Z
+@bivour1107 @AhmedRezaT Anything coding -&gt; codex
+general purpose assistant -&gt; Opus
+https://x.com/steipete/status/2015868748536668380
+--------------------------------------------------------------------------------
+
+2026-01-26T19:24:20.000Z
+@gnrtvty @hznus @moltbot @AlexFinn Try it and show me a good rust plugin arch xD
+https://x.com/steipete/status/2015868427177492559
+--------------------------------------------------------------------------------
+
+2026-01-26T19:22:39.000Z
+@HAKORAdev I don't use Windows and I built this for me, for fun.
+PRs welcome!
+https://x.com/steipete/status/2015868003347255322
+--------------------------------------------------------------------------------
+
+2026-01-26T19:13:51.000Z
+@timgilmour @0xMerth @moltbot https://t.co/WgQUC8nr1H
+https://x.com/steipete/status/2015865789660721603
+--------------------------------------------------------------------------------
+
+2026-01-26T19:12:44.000Z
+@Tommy_James_0 Not defensive, just surprised you didn’t check.
+https://x.com/steipete/status/2015865505513435178
+--------------------------------------------------------------------------------
+
+2026-01-26T19:11:26.000Z
+@georgje @wellingtonajo I'll skip the remaining few hours of sleep and get right to it. 🙃
+https://x.com/steipete/status/2015865180941357202
+--------------------------------------------------------------------------------
+
+2026-01-26T19:01:33.000Z
+@AndresOLZ /r/pull/prompt request
+https://x.com/steipete/status/2015862694021050413
+--------------------------------------------------------------------------------

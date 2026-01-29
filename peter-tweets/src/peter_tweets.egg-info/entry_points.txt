@@ -1,0 +1,2 @@
+[console_scripts]
+peter-tweets = peter_tweets.cli:main

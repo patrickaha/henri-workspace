@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Peter Tweet Harvester</title>
+    <style>
+        body { font-family: monospace; margin: 20px; }
+        pre { background: #f0f0f0; padding: 10px; overflow: auto; }
+        .tweet { margin: 10px 0; padding: 10px; border: 1px solid #ddd; }
+        .reply { background: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <h1>Peter's 24-Hour Tweet Harvest</h1>
+    <button onclick="harvest()">Run Harvest</button>
+    <div id="status"></div>
+    <div id="results"></div>
+    
+    <script>
+        // Token from env
+        const BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAAGUY7QEAAAAAhwAFoXYlY%2FltflllULb5gJUg42E%3DFgC0SPE9b7dX1mFg81QQjFvQ6rOhmJ0kMMzSLB0TtUAu7ZaZll';
+        
+        async function harvest() {
+            document.getElementById('status').textContent = 'Fetching tweets...';
+            
+            try {
+                const response = await fetch('https://api.twitter.com/2/tweets/search/recent?' + new URLSearchParams({
+                    query: 'from:steipete -is:retweet',
+                    max_results: 100,
+                    'tweet.fields': 'created_at,public_metrics,in_reply_to_user_id'
+                }), {
+                    headers: {
+                        'Authorization': `Bearer ${BEARER_TOKEN}`
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(JSON.stringify(data));
+                }
+                
+                // Process tweets
+                const now = new Date();
+                const cutoff = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+                const tweets = data.data || [];
+                
+                const recent = tweets.filter(t => new Date(t.created_at) > cutoff);
+                const regularTweets = recent.filter(t => !t.in_reply_to_user_id);
+                const replies = recent.filter(t => t.in_reply_to_user_id);
+                
+                // Display results
+                let html = `<h2>Found ${recent.length} items in last 24 hours</h2>`;
+                html += `<p>${regularTweets.length} tweets, ${replies.length} replies</p>`;
+                
+                html += '<h3>Regular Tweets:</h3>';
+                regularTweets.forEach(t => {
+                    html += `<div class="tweet">
+                        <strong>${new Date(t.created_at).toLocaleString()}</strong><br>
+                        ${t.text}<br>
+                        ❤️ ${t.public_metrics?.like_count || 0} likes | 
+                        🔁 ${t.public_metrics?.retweet_count || 0} retweets<br>
+                        <a href="https://x.com/steipete/status/${t.id}" target="_blank">View on X</a>
+                    </div>`;
+                });
+                
+                html += '<h3>Replies:</h3>';
+                replies.forEach(t => {
+                    html += `<div class="tweet reply">
+                        <strong>${new Date(t.created_at).toLocaleString()}</strong><br>
+                        ${t.text}<br>
+                        <a href="https://x.com/steipete/status/${t.id}" target="_blank">View on X</a>
+                    </div>`;
+                });
+                
+                // Also create downloadable report
+                let report = 'PETER STEINBERGER - LAST 24 HOURS\n';
+                report += '='.repeat(80) + '\n\n';
+                report += `Total: ${recent.length} items\n`;
+                report += `Tweets: ${regularTweets.length}\n`;
+                report += `Replies: ${replies.length}\n\n`;
+                
+                report += 'REGULAR TWEETS:\n';
+                regularTweets.forEach(t => {
+                    report += `\n${t.created_at}\n${t.text}\n`;
+                    report += `https://x.com/steipete/status/${t.id}\n`;
+                    report += '-'.repeat(80) + '\n';
+                });
+                
+                report += '\n\nREPLIES:\n';
+                replies.forEach(t => {
+                    report += `\n${t.created_at}\n${t.text}\n`;
+                    report += `https://x.com/steipete/status/${t.id}\n`;
+                    report += '-'.repeat(80) + '\n';
+                });
+                
+                // Add download button
+                html += `<br><button onclick="download('${btoa(report)}')">Download Report</button>`;
+                
+                document.getElementById('results').innerHTML = html;
+                document.getElementById('status').textContent = 'Done!';
+                
+            } catch (error) {
+                document.getElementById('status').textContent = 'Error: ' + error.message;
+            }
+        }
+        
+        function download(b64) {
+            const text = atob(b64);
+            const blob = new Blob([text], {type: 'text/plain'});
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `peter-tweets-${new Date().toISOString().split('T')[0]}.txt`;
+            a.click();
+        }
+    </script>
+</body>
+</html>

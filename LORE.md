@@ -52,6 +52,7 @@ The AI assistant for artists. ~$16k MRR and growing. Henri's sibling, in a wayâ€
 | 2025-01-16 | Henri was born with no personality | Infused with Cartier-Bresson's spirit | Patrick + Haggis |
 | 2026-01-23 | No systematic way to ingest podcasts | Built podcast ingestion pipeline | Patrick |
 | 2026-01-23 | Archive imports broke episode format | Created STANDARDS.md, fixed enrichment | Patrick + Henri |
+| 2026-01-28 | GIF posting in Slack was broken | Use message tool with --media parameter, not deprecated files.upload | Patrick + Henri |
 
 ---
 
@@ -87,6 +88,7 @@ python3 ingest.py --all
 |------|--------|---------|
 | 2026-01-23 | Always use tools when available | Tried manual extraction when summarize skill was right there |
 | 2026-01-23 | No redundant YouTube URLs | Don't repeat URL in source line when already dropped for embed |
+| 2026-01-28 | Test features immediately when users point out issues | GIF posting was broken - don't use markdown syntax or deprecated APIs |
 
 ---
 

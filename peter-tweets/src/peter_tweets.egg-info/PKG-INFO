@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: peter-tweets
+Version: 1.0.0
+Summary: Peter Steinberger's Twitter Wisdom Harvester - Parallel Agent Architecture
+Requires-Python: >=3.8
+Requires-Dist: tweepy>=4.14.0
+Requires-Dist: click>=8.0
+Requires-Dist: rich>=13.0
+Requires-Dist: schedule>=1.2.0
+Requires-Dist: sqlite-utils>=3.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: backoff>=2.2.0
+Requires-Dist: httpx>=0.25.0
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

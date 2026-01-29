@@ -1,0 +1,8 @@
+2026/01/20-09:58:04.860 2c40ab Creating DB /Users/arthelper/.claude/skills/dev-browser/profiles/browser-data/Profile 1/Local Storage/leveldb since it was missing.
+2026/01/20-09:58:04.868 2c40ab Reusing MANIFEST /Users/arthelper/.claude/skills/dev-browser/profiles/browser-data/Profile 1/Local Storage/leveldb/MANIFEST-000001
+2026/01/22-05:33:18.314 2c40ae Level-0 table #5: started
+2026/01/22-05:33:18.318 2c40ae Level-0 table #5: 11973 bytes OK
+2026/01/22-05:33:18.320 2c40ae Delete type=0 #3
+2026/01/24-09:09:01.441 2c40ae Level-0 table #7: started
+2026/01/24-09:09:01.445 2c40ae Level-0 table #7: 10446 bytes OK
+2026/01/24-09:09:01.448 2c40ae Delete type=0 #4
